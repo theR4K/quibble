@@ -1,0 +1,5 @@
+#pragma once
+
+#define QUIBBLE_VERSION      2020,11,08,0
+#define QUIBBLE_VERSION_STR  "20201108"
+#define QUIBBLE_VERSION_STRW  L"20201008"

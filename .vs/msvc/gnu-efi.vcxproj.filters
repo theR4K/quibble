@@ -9,9 +9,119 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Source Files\arm">
+      <UniqueIdentifier>{55e32617-950c-45d2-ab70-4d63431f51de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\aarch64">
+      <UniqueIdentifier>{e40b65ab-c169-4bc3-90be-30880e1ea976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ia32">
+      <UniqueIdentifier>{e8068482-573b-4a6d-9b30-68fd1701891b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\x86_64">
+      <UniqueIdentifier>{25098cc5-c883-4b3c-90a1-1ea0d36c3f4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gnu-efi\lib\boxdraw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\cmdline.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\console.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\crc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\dpath.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\event.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\exit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\guid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\hand.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\hw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\lock.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\pause.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\print.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\smbios.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\sread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\str.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\arm\initplat.c">
+      <Filter>Source Files\arm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\arm\math.c">
+      <Filter>Source Files\arm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\aarch64\initplat.c">
+      <Filter>Source Files\aarch64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\aarch64\math.c">
+      <Filter>Source Files\aarch64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\x86_64\initplat.c">
+      <Filter>Source Files\x86_64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\x86_64\math.c">
+      <Filter>Source Files\x86_64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\ia32\initplat.c">
+      <Filter>Source Files\ia32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gnu-efi\lib\ia32\math.c">
+      <Filter>Source Files\ia32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\gnu-efi\lib\lib.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\gnu-efi\lib\Makefile">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\gnu-efi\lib\Makefile.orig">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -16,11 +16,11 @@
  * along with Quibble.  If not, see <http://www.gnu.org/licenses/>. */
 
 #include <string.h>
-#include "config.h"
 #include "quibble.h"
 #include "misc.h"
 #include "x86.h"
 #include "print.h"
+#include "ver.h"
 
 typedef struct {
     LIST_ENTRY list_entry;
@@ -34,8 +34,8 @@ typedef struct {
     char* value;
 } ini_value;
 
-#define VERSION "Quibble " PROJECT_VER
-#define VERSIONW L"Quibble " PROJECT_VERW
+#define VERSION "Quibble " QUIBBLE_VERSION_STR
+#define VERSIONW L"Quibble " QUIBBLE_VERSION_STRW
 
 #define URL "https://github.com/maharmstone/quibble"
 #define URLW L"https://github.com/maharmstone/quibble"
