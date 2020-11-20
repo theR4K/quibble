@@ -1,6 +1,3 @@
 [submodule "gnu-efi"]
 	path = gnu-efi
 	url = git://git.code.sf.net/p/gnu-efi/code
-[submodule "freetype"]
-	path = freetype
-	url = git://git.savannah.gnu.org/freetype/freetype2.git
