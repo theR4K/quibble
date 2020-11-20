@@ -28,9 +28,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -93,17 +93,31 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>HAVE_USE_MS_ABI;GNU_EFI_USE_EXTERNAL_STDARG</PreprocessorDefinitions>
-      <ConformanceMode>false</ConformanceMode>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;HAVE_USE_MS_ABI;GNU_EFI_USE_EXTERNAL_STDARG</PreprocessorDefinitions>
+      <ConformanceMode>
+      </ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\gnu-efi\inc;$(SolutionDir)\gnu-efi\inc\ia32;$(SolutionDir)\gnu-efi\inc\protocol;$(SolutionDir)\gnu-efi\lib</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BufferSecurityCheck>false</BufferSecurityCheck>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
       <ExceptionHandling>false</ExceptionHandling>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BasicRuntimeChecks>
+      </BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
+      <CompileAsManaged>
+      </CompileAsManaged>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <DisableLanguageExtensions>
+      </DisableLanguageExtensions>
+      <SupportJustMyCode />
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <UseFullPaths />
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,7 +164,6 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
@@ -202,7 +215,6 @@
     <ClCompile Include="..\..\gnu-efi\lib\dpath.c" />
     <ClCompile Include="..\..\gnu-efi\lib\error.c" />
     <ClCompile Include="..\..\gnu-efi\lib\event.c" />
-    <ClCompile Include="..\..\gnu-efi\lib\exit.c" />
     <ClCompile Include="..\..\gnu-efi\lib\guid.c" />
     <ClCompile Include="..\..\gnu-efi\lib\hand.c" />
     <ClCompile Include="..\..\gnu-efi\lib\hw.c" />
@@ -211,8 +223,12 @@
     <ClCompile Include="..\..\gnu-efi\lib\init.c" />
     <ClCompile Include="..\..\gnu-efi\lib\lock.c" />
     <ClCompile Include="..\..\gnu-efi\lib\misc.c" />
-    <ClCompile Include="..\..\gnu-efi\lib\pause.c" />
     <ClCompile Include="..\..\gnu-efi\lib\print.c" />
+    <ClCompile Include="..\..\gnu-efi\lib\runtime\efirtlib.c" />
+    <ClCompile Include="..\..\gnu-efi\lib\runtime\rtdata.c" />
+    <ClCompile Include="..\..\gnu-efi\lib\runtime\rtlock.c" />
+    <ClCompile Include="..\..\gnu-efi\lib\runtime\rtstr.c" />
+    <ClCompile Include="..\..\gnu-efi\lib\runtime\vm.c" />
     <ClCompile Include="..\..\gnu-efi\lib\smbios.c" />
     <ClCompile Include="..\..\gnu-efi\lib\sread.c" />
     <ClCompile Include="..\..\gnu-efi\lib\str.c" />
@@ -224,11 +240,57 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\gnu-efi\lib\lib.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\gnu-efi\lib\Makefile" />
-    <None Include="..\..\gnu-efi\lib\Makefile.orig" />
+    <ClInclude Include="..\..\gnu-efi\inc\efi.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efiapi.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\eficon.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efidebug.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efidef.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efidevp.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efierr.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efifs.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efigpt.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efiip.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efilib.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efilink.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efinet.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efipart.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efipciio.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efipoint.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efiprot.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efipxebc.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efirtlib.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efiser.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efishellintf.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efishellparm.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efistdarg.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efitcp.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efiudp.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efiui.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efi_nii.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\efi_pxe.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\ia32\efibind.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\ia32\efilibplat.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\ia32\pe.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\libsmbios.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\pci22.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\adapterdebug.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\eficonsplit.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\efidbg.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\efivar.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\intload.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\legacyboot.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\piflash64.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\protocol\vgaclass.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\romload.h" />
+    <ClInclude Include="..\..\gnu-efi\inc\x86_64\efibind.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\gnu-efi\inc\x86_64\efilibplat.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\gnu-efi\inc\x86_64\pe.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\internal">
+      <UniqueIdentifier>{6cf1053e-ab89-4a6b-a34c-cfc78e6610f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\locale">
+      <UniqueIdentifier>{5868291d-6451-4684-9b01-27f5cc664a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\malloc">
+      <UniqueIdentifier>{e198d0c2-8e27-4732-b42c-784e44a9cead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{9ccc5b42-8040-4deb-8adf-0db4f341baf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\multibyte">
+      <UniqueIdentifier>{1291b613-9bcf-49ec-9b38-1cffcce98d12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\setjmp">
+      <UniqueIdentifier>{7a384bfe-5764-4bf6-975b-6d9dd686813e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\stdio">
+      <UniqueIdentifier>{021b38d0-9617-440b-99a1-0117292947c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\stdlib">
+      <UniqueIdentifier>{a9f4f4ad-c8f4-4e94-bc78-e6c173c6758d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\string">
+      <UniqueIdentifier>{098ad55c-e9eb-46ac-bfb6-5a4ddea6a4bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\errno">
+      <UniqueIdentifier>{18aa130a-dc36-4667-b531-9e16116ff9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\setjmp\x86_64">
+      <UniqueIdentifier>{b58b42e8-3488-4694-a1e2-5a5e10297850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\setjmp\x32">
+      <UniqueIdentifier>{fb9c7a31-6f36-4bae-9927-191af272be4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\muslVC\src\malloc\calloc.c">
+      <Filter>Source Files\malloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\muslVC\src\malloc\malloc.c">
+      <Filter>Source Files\malloc</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

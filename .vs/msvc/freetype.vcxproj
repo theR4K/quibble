@@ -28,29 +28,29 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -80,45 +80,92 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>
       </SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;FT_DEBUG_LEVEL_ERROR;FT_DEBUG_LEVEL_TRACE;FT2_BUILD_LIBRARY;$(UserDefines);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;FT2_BUILD_LIBRARY;$(UserDefines);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>
+      </ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <ExceptionHandling>false</ExceptionHandling>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BasicRuntimeChecks>
+      </BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
+      <CompileAsManaged>
+      </CompileAsManaged>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AssemblerOutput />
+      <OmitFramePointers />
+      <UseFullPaths>false</UseFullPaths>
+      <AssemblerListingLocation />
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
       <AdditionalDependencies>
       </AdditionalDependencies>
+      <SubSystem>
+      </SubSystem>
     </Lib>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;FT2_BUILD_LIBRARY;$(UserDefines);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>
+      </ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OmitFramePointers />
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BasicRuntimeChecks />
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AssemblerOutput />
+      <AssemblerListingLocation />
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <CompileAs>CompileAsC</CompileAs>
+      <UseFullPaths>false</UseFullPaths>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,34 +173,98 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;FT2_BUILD_LIBRARY;$(UserDefines);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>
+      </ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <BasicRuntimeChecks />
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AssemblerOutput />
+      <AssemblerListingLocation />
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <CompileAs>CompileAsC</CompileAs>
+      <UseFullPaths>false</UseFullPaths>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+      <ManifestFile />
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <ProfileGuidedDatabase />
     </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;FT2_BUILD_LIBRARY;$(UserDefines);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>
+      </ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BasicRuntimeChecks />
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AssemblerOutput />
+      <AssemblerListingLocation />
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <CompileAs>CompileAsC</CompileAs>
+      <UseFullPaths>false</UseFullPaths>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <OptimizeReferences>
+      </OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+      <ManifestFile />
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <ProfileGuidedDatabase />
     </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\freetype\builds\windows\ftdebug.c" />
@@ -174,7 +285,6 @@
     <ClCompile Include="..\..\freetype\src\base\ftpfr.c" />
     <ClCompile Include="..\..\freetype\src\base\ftstroke.c" />
     <ClCompile Include="..\..\freetype\src\base\ftsynth.c" />
-    <ClCompile Include="..\..\freetype\src\base\ftsystem.c" />
     <ClCompile Include="..\..\freetype\src\base\fttype1.c" />
     <ClCompile Include="..\..\freetype\src\base\ftwinfnt.c" />
     <ClCompile Include="..\..\freetype\src\bdf\bdf.c" />
@@ -199,6 +309,81 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\freetype\src\base\ftver.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\freetype\include\freetype\config\ftconfig.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\config\ftheader.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\config\ftmodule.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\config\ftoption.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\freetype.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftadvanc.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftbbox.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftbdf.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftbitmap.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftbzip2.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftcache.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftchapters.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftcid.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftcolor.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftdriver.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\fterrdef.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\fterrors.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftgasp.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftglyph.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftgxval.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftgzip.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftimage.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftincrem.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftlist.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftlzw.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftmac.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftmm.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftmodapi.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftmoderr.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftotval.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftoutln.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftparams.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftpfr.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftrender.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftsizes.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftsnames.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftstroke.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftsynth.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftsystem.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\fttrigon.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\fttypes.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\autohint.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\cffotypes.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\cfftypes.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\compiler-macros.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftcalc.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftdebug.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftdrv.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\fthash.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftmemory.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftobjs.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftpsprop.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftrfork.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftserv.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftstream.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\fttrace.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\ftvalid.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\psaux.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\pshints.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\sfnt.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\t1types.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\tttypes.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\internal\wofftypes.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\t1tables.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\ttnameid.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\tttables.h" />
+    <ClInclude Include="..\..\freetype\include\freetype\tttags.h" />
+    <ClInclude Include="..\..\freetype\include\ft2build.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
