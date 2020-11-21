@@ -15,6 +15,7 @@ Screenshot of Windows 10 1909 running on Btrfs:
 Donations
 ---------
 
+To original author:
 I'm doing this for kicks and giggles, but if you want to donate it'd be appreciated:
 
 * [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=3XQVCQ6YB55L2&lc=GB&item_name=Quibble%20donation&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
@@ -73,21 +74,12 @@ Compiling
 
 On Linux:
 
-* Install a cross-compiler, x86_64-w64-mingw32-gcc, and cmake.
-* Run the following:
-  * `git clone https://github.com/maharmstone/quibble`
-  * `cd quibble`
-  * `mkdir build`
-  * `cd build`
-  * `cmake -DCMAKE_TOOLCHAIN_FILE=../mingw-amd64.cmake ..` or `cmake -DCMAKE_TOOLCHAIN_FILE=../mingw-x86.cmake ..`
-  * `make`
+in progress
 
 On Windows:
 
-* Install a recent version of Visual C++ - I used the free Visual Studio Community 2019
-* Clone the repository, and open it as a folder
-* Wait for it to finish generating its cmake cache
-* Right-click on CMakeLists.txt and choose "Build"
+just use Visual Studio 2019 with c++ support.
+
 
 FAQs
 ----
