@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "quibble", ".vs\msvc\quibble.vcxproj", "{6A4D3E70-8064-478F-84F6-723B3223AE5A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E5BB706-58A4-47F8-8382-F7CD27A3652D} = {0E5BB706-58A4-47F8-8382-F7CD27A3652D}
+		{D0916D47-A552-4075-A655-162FF0224EFD} = {D0916D47-A552-4075-A655-162FF0224EFD}
+		{BD1EBF8E-DBE0-416B-882D-35CA3F64BB96} = {BD1EBF8E-DBE0-416B-882D-35CA3F64BB96}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnu-efi", ".vs\msvc\gnu-efi.vcxproj", "{BD1EBF8E-DBE0-416B-882D-35CA3F64BB96}"
 EndProject
@@ -51,14 +56,6 @@ Global
 		{0E5BB706-58A4-47F8-8382-F7CD27A3652D}.Release|x64.Build.0 = Release|x64
 		{0E5BB706-58A4-47F8-8382-F7CD27A3652D}.Release|x86.ActiveCfg = Release|Win32
 		{0E5BB706-58A4-47F8-8382-F7CD27A3652D}.Release|x86.Build.0 = Release|Win32
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Debug|x64.ActiveCfg = Debug|x64
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Debug|x64.Build.0 = Debug|x64
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Debug|x86.ActiveCfg = Debug|Win32
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Debug|x86.Build.0 = Debug|Win32
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Release|x64.ActiveCfg = Release|x64
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Release|x64.Build.0 = Release|x64
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Release|x86.ActiveCfg = Release|Win32
-		{81CE98A2-74A2-415A-9AB9-3AA03318C1AE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
