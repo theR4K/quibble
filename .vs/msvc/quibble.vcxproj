@@ -44,6 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <SpectreMitigation>Spectre</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -93,9 +94,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</OutDir>
-    <IntDir>$(SolutionDir)objs\$(Configuration)\$(Platform)</IntDir>
+    <IntDir>$(SolutionDir)objs\quibble\$(Configuration)\$(Platform)</IntDir>
     <TargetExt>.efi</TargetExt>
-    <IncludePath>$(SolutionDir)quibble\include;$(SolutionDir)quibble\include\win;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)quibble\include;$(SolutionDir)quibble\include\win;$(SolutionDir)gnu-efi\inc;$(SolutionDir)gnu-efi\inc\x86_64;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)bin\$(Configuration)\$(Platform)\;$(LibraryPath)</LibraryPath>
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
@@ -198,7 +199,8 @@
       </SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FT_CONFIG_OPTION_DISABLE_STREAM_SUPPORT;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)gnu-efi\inc;$(SolutionDir)gnu-efi\inc\x86_64;$(SolutionDir)freetype\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <CompileAs>CompileAsC</CompileAs>
@@ -209,11 +211,13 @@
       <OmitFramePointers>false</OmitFramePointers>
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
+      <BasicRuntimeChecks />
+      <OmitDefaultLibName>true</OmitDefaultLibName>
     </ClCompile>
     <Link>
       <SubSystem>EFI Application</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>freetype.lib;musl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;libcmtd.lib;</AdditionalDependencies>
       <OptimizeReferences>
       </OptimizeReferences>
       <EntryPointSymbol>efi_main</EntryPointSymbol>
@@ -226,6 +230,7 @@
       <UACUIAccess />
       <ProfileGuidedDatabase />
       <RandomizedBaseAddress />
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

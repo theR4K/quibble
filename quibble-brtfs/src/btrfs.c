@@ -20,8 +20,8 @@
 #include <efilink.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../misc.h"
-#include "../quibbleproto.h"
+#include "misc.h"
+#include "quibbleproto.h"
 #include "btrfs.h"
 
 #define Z_SOLO

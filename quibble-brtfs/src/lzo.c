@@ -28,7 +28,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../misc.h"
+#include "misc.h"
 
 #define LZO_PAGE_SIZE 4096
 
